@@ -1,0 +1,14 @@
+#! /usr/bin/kermit +
+;
+; copy this to ~/bin/kermit-serial and make executable!
+;
+set modem type none
+set line /dev/\%1
+set carrier-watch off
+set speed 115200
+if defined \%2 set speed \%2
+;set flow rts/cts
+eightbit
+set parity none
+set stop-bits 1
+connect
